@@ -65,6 +65,75 @@ body {
     background-color: #4CAF50;
     color: white;
     border: none;
-    cursor: pointer;
+    cursor: pointer;/* 基本樣式 */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ddbebe;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .question-container {
+        display: flex;
+        flex-direction: column; /* 垂直排列 */
+        align-items: center; /* 水平居中對齊 */
+        margin-bottom: 20px;
+        padding: 10px; /* 添加內邊距，確保內容不會緊貼邊緣 */
+        box-sizing: border-box; /* 包括內邊距和邊框在元素的總寬度和高度中 */
+    }
+    
+    #question {
+        font-family: Arial, sans-serif;
+        color: black;
+        font-size: 24px; /* 減小字體大小以適應小屏幕 */
+        margin: 0 0 10px 0; /* 顯示於頂部，底部有距離 */
+        text-align: center; /* 文字居中 */
+        word-wrap: break-word; /* 自動換行 */
+    }
+    
+    #hint {
+        font-size: 16px; /* 減小字體大小以適應小屏幕 */
+        color: blue;
+        display: none; /* 預設隱藏 */
+        text-align: center; /* 文字居中 */
+        word-wrap: break-word; /* 自動換行 */
+    }
+    
+    #hintButton {
+        margin-top: 10px; /* 提示按鈕和題目之間的距離 */
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    /* 圖片按鈕樣式 */
+    #images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 自適應列數 */
+        gap: 10px;
+        padding: 10px; /* 添加內邊距 */
+        box-sizing: border-box; /* 包括內邊距和邊框在元素的總寬度和高度中 */
+    }
+    
+    .image-btn img {
+        width: 100%; /* 圖片按鈕在小屏幕上自適應寬度 */
+        height: auto; /* 自動調整高度以保持比例 */
+    }
+    
+    /* 小屏幕樣式 */
+    @media (max-width: 600px) {
+        #question {
+            font-size: 18px; /* 小屏幕上更小的字體大小 */
+        }
+    
+        #hint {
+            font-size: 14px; /* 小屏幕上更小的提示字體大小 */
+        }
+    }
+    
     font-size: 16px;
 }
