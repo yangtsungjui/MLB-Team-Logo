@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ddbebe;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.question-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%; /* 確保容器寬度充滿可用空間 */
+    box-sizing: border-box; /* 包括邊框和內邊距在內 */
+}
+
+#question {
+    font-family: Arial, sans-serif;
+    color: black;
+    font-size: 30px;
+    margin-right: 20px;
+    flex-shrink: 0; /* 防止壓縮 */
+}
+
+#hint {
+    font-size: 20px;
+    color: blue;
+    display: none; /* 預設隱藏 */
+    margin-left: 20px; /* 提示文字和按鈕之間的距離 */
+}
+
+#images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.image-btn {
+    background-color: white;
+    border: 3px solid #442e2e;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.image-btn img {
+    width: 200px;
+    height: 100px;
+}
+
+.correct {
+    background-color: green;
+    pointer-events: none;
+}
+
+.incorrect {
+    background-color: red;
+    pointer-events: none;
+}
+
+#hint-button {
+    margin-left: 20px; /* 提示按鈕和題目之間的距離 */
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
