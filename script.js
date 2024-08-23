@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function loadQuestion() {
         if (currentQuestionIndex >= shuffledQuestions.length) {
             // 所有題目答完後顯示結果
-            questionElement.textContent = `恭喜你，已完成所有題目！你答對了 ${score} 題。`;
+            questionElement.textContent = `恭喜小仙女完成所有題目！你答對了 ${score} 題。`;
             hintButton.style.display = "none"; // 隱藏提示按鈕
             hintElement.style.display = "none"; // 隱藏提示文字
             return;

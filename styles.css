@@ -1,3 +1,4 @@
+/* 基本樣式 */
 body {
     font-family: Arial, sans-serif;
     background-color: #ddbebe;
@@ -6,34 +7,56 @@ body {
     padding: 20px;
 }
 
+/* 問題容器樣式 */
 .question-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     width: 100%; /* 確保容器寬度充滿可用空間 */
-    box-sizing: border-box; /* 包括邊框和內邊距在內 */
+    padding: 10px; /* 添加內邊距，確保內容不會緊貼邊緣 */
+    box-sizing: border-box; /* 包括內邊距和邊框在元素的總寬度和高度中 */
+    flex-direction: column; /* 垂直排列 */
 }
 
+/* 問題文字樣式 */
 #question {
     font-family: Arial, sans-serif;
     color: black;
-    font-size: 30px;
-    margin-right: 20px;
-    flex-shrink: 0; /* 防止壓縮 */
+    font-size: 24px; /* 字體大小 */
+    margin: 0 0 10px 0; /* 與上方保持距離 */
+    text-align: center; /* 文字居中 */
+    word-wrap: break-word; /* 自動換行 */
 }
 
+/* 提示文字樣式 */
 #hint {
-    font-size: 20px;
+    font-size: 16px; /* 字體大小 */
     color: blue;
     display: none; /* 預設隱藏 */
+    text-align: center; /* 文字居中 */
+    word-wrap: break-word; /* 自動換行 */
     margin-left: 20px; /* 提示文字和按鈕之間的距離 */
 }
 
+/* 提示按鈕樣式 */
+#hintButton {
+    margin-top: 10px; /* 提示按鈕和題目之間的距離 */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 圖片按鈕的樣式 */
 #images {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 自適應列數 */
     gap: 10px;
+    padding: 10px; /* 添加內邊距 */
+    box-sizing: border-box; /* 包括內邊距和邊框在元素的總寬度和高度中 */
 }
 
 .image-btn {
@@ -44,96 +67,29 @@ body {
 }
 
 .image-btn img {
-    width: 200px;
-    height: 100px;
+    width: 100%; /* 圖片按鈕在小屏幕上自適應寬度 */
+    height: auto; /* 自動調整高度以保持比例 */
 }
 
+/* 正確答案樣式 */
 .correct {
     background-color: green;
     pointer-events: none;
 }
 
+/* 錯誤答案樣式 */
 .incorrect {
     background-color: red;
     pointer-events: none;
 }
 
-#hint-button {
-    margin-left: 20px; /* 提示按鈕和題目之間的距離 */
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;/* 基本樣式 */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #ddbebe;
-        text-align: center;
-        margin: 0;
-        padding: 20px;
-    }
-    
-    .question-container {
-        display: flex;
-        flex-direction: column; /* 垂直排列 */
-        align-items: center; /* 水平居中對齊 */
-        margin-bottom: 20px;
-        padding: 10px; /* 添加內邊距，確保內容不會緊貼邊緣 */
-        box-sizing: border-box; /* 包括內邊距和邊框在元素的總寬度和高度中 */
-    }
-    
+/* 小屏幕樣式調整 */
+@media (max-width: 600px) {
     #question {
-        font-family: Arial, sans-serif;
-        color: black;
-        font-size: 24px; /* 減小字體大小以適應小屏幕 */
-        margin: 0 0 10px 0; /* 顯示於頂部，底部有距離 */
-        text-align: center; /* 文字居中 */
-        word-wrap: break-word; /* 自動換行 */
+        font-size: 18px; /* 小屏幕上更小的字體大小 */
     }
-    
+
     #hint {
-        font-size: 16px; /* 減小字體大小以適應小屏幕 */
-        color: blue;
-        display: none; /* 預設隱藏 */
-        text-align: center; /* 文字居中 */
-        word-wrap: break-word; /* 自動換行 */
+        font-size: 14px; /* 小屏幕上更小的提示字體大小 */
     }
-    
-    #hintButton {
-        margin-top: 10px; /* 提示按鈕和題目之間的距離 */
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    
-    /* 圖片按鈕樣式 */
-    #images {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 自適應列數 */
-        gap: 10px;
-        padding: 10px; /* 添加內邊距 */
-        box-sizing: border-box; /* 包括內邊距和邊框在元素的總寬度和高度中 */
-    }
-    
-    .image-btn img {
-        width: 100%; /* 圖片按鈕在小屏幕上自適應寬度 */
-        height: auto; /* 自動調整高度以保持比例 */
-    }
-    
-    /* 小屏幕樣式 */
-    @media (max-width: 600px) {
-        #question {
-            font-size: 18px; /* 小屏幕上更小的字體大小 */
-        }
-    
-        #hint {
-            font-size: 14px; /* 小屏幕上更小的提示字體大小 */
-        }
-    }
-    
-    font-size: 16px;
 }
