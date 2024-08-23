@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ddbebe;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .question-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #question {
+            font-family: Arial, sans-serif;
+            color: black;
+            font-size: 30px;
+            margin-right: 20px;
+        }
+        #hint {
+            font-size: 20px;
+            color: blue;
+            display: none; /* 預設隱藏 */
+            margin-left: 20px; /* 保持提示文字和按鈕之間的距離 */
+            margin-right: 20px;
+        }
+        #images {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        .image-btn {
+            background-color: white;
+            border: 3px solid #442e2e;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .image-btn img {
+            width: 200px;
+            height: 100px;
+        }
+        .correct {
+            background-color: green;
+            pointer-events: none;
+        }
+        .incorrect {
+            background-color: red;
+            pointer-events: none;
+        }
+        #hint-button {
+            margin-left: 20px; /* 提示按鈕和題目之間的距離 */
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <div id="question">Loading...</div>
+        <div id="hint"></div> <!-- 提示區域 -->
+        <button id="hintButton">顯示提示</button>
+    </div>
+    <div id="images"></div>
+    <script src="script.js"></script>
+</body>
+</html>
