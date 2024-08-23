@@ -13,10 +13,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    width: 100%; /* 確保容器寬度充滿可用空間 */
-    padding: 10px; /* 添加內邊距，確保內容不會緊貼邊緣 */
-    box-sizing: border-box; /* 包括內邊距和邊框在元素的總寬度和高度中 */
-    flex-direction: column; /* 垂直排列 */
+    flex-wrap: wrap; /* 允許換行 */
+    text-align: center;
 }
 
 /* 問題文字樣式 */
@@ -31,24 +29,25 @@ body {
 
 /* 提示文字樣式 */
 #hint {
-    font-size: 16px; /* 字體大小 */
+    font-size: 16px;
     color: blue;
-    display: none; /* 預設隱藏 */
-    text-align: center; /* 文字居中 */
-    word-wrap: break-word; /* 自動換行 */
-    margin-left: 20px; /* 提示文字和按鈕之間的距離 */
+    display: none;
+    margin-left: 10px;
+    order: 2; /* 設置提示文字的顯示順序 */
 }
 
 /* 提示按鈕樣式 */
 #hintButton {
-    margin-top: 10px; /* 提示按鈕和題目之間的距離 */
+    margin: 10px;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    order: 1; /* 設置提示按鈕的顯示順序 */
 }
+
 
 /* 圖片按鈕的樣式 */
 #images {
@@ -83,13 +82,17 @@ body {
     pointer-events: none;
 }
 
-/* 小屏幕樣式調整 */
+/* 在小屏幕上的樣式 */
 @media (max-width: 600px) {
-    #question {
-        font-size: 18px; /* 小屏幕上更小的字體大小 */
+    .question-container {
+        flex-direction: row; /* 改變小屏幕上的排列方向為橫向 */
+    }
+
+    #hintButton {
+        order: 1; /* 確保按鈕在文字前 */
     }
 
     #hint {
-        font-size: 14px; /* 小屏幕上更小的提示字體大小 */
+        order: 2; /* 確保文字在按鈕後 */
     }
 }
